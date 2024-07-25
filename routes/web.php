@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Route;
  * @api GET /
  */
 Route::get('/', function () {
-    return redirect('/articles');
+    return view("welcome");
 });
 
 
@@ -17,7 +17,7 @@ Route::get('/', function () {
  *
  * @api GET /articles/create
  */
-Route::get('/articles/create', [ArticleController::class, 'create']);
+Route::get('/articles/create', [ArticleController::class, 'create'])->name('articles.create');
 
 
 /**

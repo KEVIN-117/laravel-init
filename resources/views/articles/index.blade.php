@@ -1,18 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('main')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>
-        Articles
-    </title>
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-</head>
-
-<body>
-    <div class="w-[80%] mx-auto flex justify-center items-center h-screen">
+@section('content')
+    <section
+        class="w-[80%] mx-auto flex justify-center items-center h-auto py-10 backdrop-blur-xl bg-slate-950/30 rounded-xl border-2 border-indigo-600">
         <div class="relative grid grid-cols-1 gap-4">
             <div class="w-full rounded-xl flex justify-between items-center p-3 border-2 border-slate-800">
                 <h2 class="text-2xl font-bold text-slate-800">Articles</h2>
@@ -96,8 +86,5 @@
             </div>
 
         </div>
-    </div>
-
-</body>
-
-</html>
+    </section>
+@endsection

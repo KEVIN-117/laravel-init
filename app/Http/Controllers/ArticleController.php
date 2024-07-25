@@ -34,8 +34,32 @@ class ArticleController extends Controller
         return redirect('/articles');
     }
 
-    public function destroy(Article $article){
-        Article::destroy($article->id);
+    public function update(Request $req, $id){
+
+        $validate = $req->validate([
+            'title' => ['required', 'string', 'max:255'],
+            'content' => ['required', 'string'],
+            'is_published' => ['sometimes', 'boolean'],
+        ]);
+
+        Article::updateOrInsert(['id' => $id], $validate);
+
+        return redirect('/articles');
+    }
+
+    public function show($id){
+        $article = Article::find($id);
+        return view('articles.show', ['article' => $article]);
+    }
+
+    public function edit($id){
+        $article = Article::find($id);
+        return view('articles.edit', ['article' => $article]);
+    }
+
+    public function destroy($id){
+        $article = Article::find($id);
+        $article->delete();
         return redirect('/articles');
     }
 }

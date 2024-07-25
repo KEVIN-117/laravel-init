@@ -365,3 +365,28 @@
 - `tests` directory: The tests directory contains your automated tests. Example Pest or PHPUnit unit tests and feature tests are provided out of the box.
 
 - `vendor` directory: The vendor directory contains your Composer dependencies.
+
+
+## Management and Routes Definition
+
+- Route GET request 
+    ```php
+    Rute::get('/api', function(){
+        return "Hola";
+    })
+    ```
+- Dynamic Route:
+    ```php
+    Rute::get('/api/{slug}', function($slug){
+        return $slug;
+    })
+    ```
+
+- Query Route:
+    ```php
+    // import 
+    use Illuminate\Http\Request;
+    Rute::get('/search', function(Request $req){
+        return $req->all();
+    })
+    ```

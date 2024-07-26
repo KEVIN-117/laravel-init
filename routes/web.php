@@ -10,14 +10,14 @@ use Illuminate\Support\Facades\Route;
  */
 Route::get('/', function () {
     return view("welcome");
-});
+})->name('home');
 
 
 /**
  *
  * @api GET /articles/create
  */
-Route::get('/articles/create', [ArticleController::class, 'create'])->name('articles.create');
+Route::get('/articles/create', [ArticleController::class, 'create']);
 
 
 /**
@@ -32,7 +32,7 @@ Route::post('/articles/{id}', [ArticleController::class, 'update']);
  *
  * @api GET /articles
  */
-Route::get('/articles', [ArticleController::class, 'index']);
+Route::get('/articles', [ArticleController::class, 'index'])->name('articles.index');
 
 
 /**

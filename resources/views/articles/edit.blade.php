@@ -12,7 +12,7 @@
             <div class="sm:mx-auto sm:w-full sm:max-w-sm">
                 <img class="mx-auto h-10 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
                     alt="Your Company">
-                <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
+                <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900 dark:text-slate-600">
                     Edit Article
                 </h2>
             </div>
@@ -21,25 +21,28 @@
                 <form class="space-y-6" action="/articles/{{ $article->id }}" method="POST">
                     @csrf
                     <div>
-                        <label for="title" class="block text-xl font-medium leading-6 text-gray-900">Article
+                        <label for="title"
+                            class="block text-xl font-medium leading-6 text-gray-900 dark:text-slate-600">Article
                             Title</label>
                         <div class="mt-2">
                             <input id="title" name="title" type="text" value="{{ $article->title }}"
-                                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                class="block w-full rounded-md border-0 py-1.5 text-gray-900 dark:text-slate-600 shadow-sm ring-1 ring-inset ring-sky-700 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 dark:bg-slate-950">
                         </div>
                     </div>
 
                     <div>
-                        <label for="content" class="block text-xl font-medium leading-6 text-gray-900">Article
+                        <label for="content"
+                            class="block text-xl font-medium leading-6 text-gray-900 dark:text-slate-600">Article
                             Content</label>
                         <div class="mt-2">
                             <textarea id="content" name="content"
-                                class="block w-full h-[200px] rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">{{ $article->content }}</textarea>
+                                class="block w-full h-[400px] rounded-md border-0 py-1.5 text-gray-900 dark:text-slate-600 shadow-sm ring-1 ring-inset ring-sky-700 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 text-lg sm:text-sm sm:leading-6 dark:bg-slate-950">{{ $article->content }}</textarea>
                         </div>
                     </div>
 
                     <div class="flex justify-between w-full items-center">
-                        <label for="is_published" class="block text-xl font-medium leading-6 text-gray-900">Article
+                        <label for="is_published"
+                            class="block text-xl font-medium leading-6 text-gray-900 dark:text-slate-600">Article
                             Published?</label>
                         <div class="mt-2">
                             <input id="is_published" name="is_published" type="checkbox"

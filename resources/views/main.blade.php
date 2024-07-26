@@ -909,7 +909,7 @@
             src="https://laravel.com/assets/img/welcome/background.svg" />
         <div
             class="relative flex flex-col items-center justify-center selection:bg-[#FF2D20] selection:text-white gap-6">
-            <header class="flex w-full items-center gap-2 px-10 py-5 backdrop-blur-sm bg-slate-950/30 border-b-2 border-indigo-600 rounded-xl">
+            <header class="flex w-full items-center gap-2 px-10 py-5 backdrop-blur-xl bg-slate-950/50 border-b-2 border-indigo-600 rounded-xl">
                 <div class="flex lg:justify-center lg:col-start-2">
                     <svg class="h-12 w-auto text-white lg:h-16 lg:text-[#FF2D20]" viewBox="0 0 62 65" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
@@ -942,11 +942,11 @@
                 @endif
                 <ul class="flex ml-auto gap-4">
                     <li>
-                        <a href="/articles"
+                        <a href="{{ route('articles.index') }}"
                             class="text-lg uppercase font-semibold underline hover:text-black dark:hover:text-white/80">Articles</a>
                     </li>
                     <li>
-                        <a href="/"
+                        <a href="{{ route('home') }}"
                             class="text-lg uppercase font-semibold underline hover:text-black dark:hover:text-white/80">Home</a>
                     </li>
                 </ul>
